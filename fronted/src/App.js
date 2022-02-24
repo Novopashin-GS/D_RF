@@ -2,17 +2,28 @@ import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import axios from 'axios';
+import UserList from './components/users';
 
-class App extends React.component {
+class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {'authors': []
+    this.state = {'users': []
     }
   }
   componentDidMount() {
-    const authors = axios.get('http://localhost:8000/api/users/').then(response =>
-    {const authors = response.data
-    })
+    axios.get('http://localhost:8000/api/users/').then(response =>
+    {const users = response.data
+      this.setState({'users': users})
+    }).catch(error => console.log(error))
+  }
+  render() {
+    return (
+        <div>
+          <menu></menu>
+          <UserList users={this.state.users}/>
+          <footer></footer>
+        </div>
+    )
   }
 }
 

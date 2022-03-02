@@ -1,5 +1,5 @@
-from users.models import Users
-from users.serializers import UsersSerializer
+from usersapp.models import Users
+from usersapp.serializers import UsersSerializer
 from rest_framework.viewsets import ModelViewSet
 
 

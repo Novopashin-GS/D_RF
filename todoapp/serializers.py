@@ -1,4 +1,3 @@
-from usersapp.models import Users
 from rest_framework.serializers import ModelSerializer, StringRelatedField
 from todoapp.models import Project, Todo
 

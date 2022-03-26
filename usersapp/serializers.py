@@ -6,4 +6,4 @@ class UsersSerializer(ModelSerializer):
 
     class Meta:
         model = Users
-        exclude = ['password']
+        exclude = ['password', 'user_permissions']

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'todoapp',
     'drf_yasg',
+    'graphene_django',
     'django_filters',
 ]
 
@@ -136,6 +137,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'usersapp.Users'
+
+GRAPHENE = {
+    "SCHEMA": "D_RF.schema.schema"
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],

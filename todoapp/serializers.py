@@ -3,7 +3,6 @@ from todoapp.models import Project, Todo
 
 
 class ProjectSerializer(ModelSerializer):
-    users = StringRelatedField(many=True)
 
     class Meta:
         model = Project
@@ -11,7 +10,6 @@ class ProjectSerializer(ModelSerializer):
 
 
 class TodoSerializer(ModelSerializer):
-    project = ProjectSerializer(many=True)
 
     class Meta:
         model = Todo
